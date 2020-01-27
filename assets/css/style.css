@@ -2301,7 +2301,7 @@ input[type=password].error,
 .header .buy-btn:active,
 .header .buy-btn.hovered,
 .header .buy-btn.pressed {
-  border-color: #5b4381;
+  border-color: #41203f;
 }
 .base-clr-bg,
 .overlay.overlay-clr:before,
@@ -2339,7 +2339,7 @@ input[type=password].error,
 .call-to-action-section > .overlay:before,
 .thumb-wrapper .overlay:before,
 .header .buy-btn {
-  background-color: #5b4381;
+  background-color: #41203f;
 }
 .base-clr-txt,
 .highlight,
@@ -2410,7 +2410,7 @@ input[type="submit"] + .loading,
 .header.header-color .navigation-header .buy-btn.pressed,
 input.header.header-color .navigation-header .buy-btn,
 .header .buy-btn {
-  color: #5b4381;
+  color: #41203f;
 }
 
 .header.header-black .navigation-link:hover,
@@ -2804,7 +2804,7 @@ li {
   background-color: #fe6760;
 }
 .style-switcher .template-set-color .color.orange {
-  background-color: #5b4381;
+  background-color: #41203f;
 }
 .style-switcher .template-animations-switch input[type="checkbox"] {
   display: none;
@@ -3508,9 +3508,9 @@ button.btn.btn-block {
 .schedule .tab-content .nav.nav-schedule > li > a:not(:hover):not(:active) {
   color: #51545b;
 }
-.schedule .tab-content .nav.nav-schedule > li.active {
-  background-color: transparent;
-}
+/*.schedule .tab-content .nav.nav-schedule > li.active {*/
+/*  background-color: transparent;*/
+/*}*/
 .schedule .tab-content-schedule {
   position: relative;
   border: none;
@@ -4155,7 +4155,7 @@ button.btn.btn-block {
   .schedule .tab-content .nav.nav-schedule > li.active > a:focus,
   .tabs-vertical .nav.nav-tabs > li.active > a:focus {
     background-color: inherit;
-    color: #5b4381;
+    color: #41203f;
     border: none;
     opacity: 1;
   }
@@ -5553,9 +5553,9 @@ button[type="submit"] .loading {
   opacity: 1;
 }
 .gallery-thumb-link:active:after {
-  -webkit-box-shadow: 0 0 30px 4px #5b4381;
-  -moz-box-shadow: 0 0 30px 4px #5b4381;
-  box-shadow: 0 0 30px 4px #5b4381;
+  -webkit-box-shadow: 0 0 30px 4px #41203f;
+  -moz-box-shadow: 0 0 30px 4px #41203f;
+  box-shadow: 0 0 30px 4px #41203f;
 }
 .gallery-thumb-link:before {
   -webkit-transition: opacity 0.25s ease-out;
@@ -6226,7 +6226,7 @@ button[type="submit"] .loading {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background-color: #5b4381;
+  background-color: #41203f;
 }
 .header.header-black .navigation-link {
   color: #ffffff;
@@ -6490,7 +6490,7 @@ button[type="submit"] .loading {
   .header.header-color .navbar-collapse .buy-btn:active,
   .header.header-color .navbar-collapse .buy-btn.hovered,
   .header.header-color .navbar-collapse .buy-btn.pressed {
-    color: #5b4381;
+    color: #41203f;
     background-color: #ffffff;
   }
 }
@@ -6963,15 +6963,8 @@ button[type="submit"] .loading {
   background-image: url("../images/bg.jpg");
 }
 .gradient-overlay:before {
-  background: #9001a5;
-  background: -moz-linear-gradient(top, #9001a5 0%, #10171a 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9001a5), color-stop(100%, #10171a));
-  background: -webkit-linear-gradient(top, #9001a5 0%, #10171a 100%);
-  background: -o-linear-gradient(top, #9001a5 0%, #10171a 100%);
-  background: -ms-linear-gradient(top, #9001a5 0%, #10171a 100%);
-  background: linear-gradient(to bottom, #9001a5 0%, #10171a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9001a5', endColorstr='#10171a', GradientType=0);
-  opacity: 0.7;
+  background: #41203f;
+  opacity: 0.4;
 }
 .bg1.overlay:before {
 	opacity: 0.9;
