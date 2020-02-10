@@ -130,5 +130,27 @@
         "language": ""
       }
     ]
+  },
+  {
+    "name": "Onur Yılmaz",
+    "title": "Software Development Manager at Kitapyurdu.com",
+    "bio": "Onur is working as Software Development Manager at Kitapyurdu.com. You'll mostly meet him as csonuryilmaz on the internet. He likes programming languages, computer science topics and all tech related stuff especially free and open source tools. Mostly works on native iOS / Android apps, systems programming with Java or Bash, and web applications with awesome PHP. For him, it's a mission and a passion!",
+    "avatar": "/assets\/images\/speakers\/onur.jpeg",
+    "social": {
+      "twitter": "https:\/\/twitter.com\/csonuryilmaz",
+      "github": "https:\/\/github.com\/csonuryilmaz"
+    },
+    "sessions": [
+      {
+        "title": "Static Code Analysis in PHP",
+        "description": "In this talk, we will search answers to questions like what is Static Code Analysis, what are the contributions to software development processes, what criterias we need to consider when choosing tools for Static Code Analysis. Then we will make an investigation into which tools we can use in PHP and how to configure them. The selected tools will be free and open source tools that everyone can easily access.",
+        "keynote": 0,
+        "day": 1,
+        "track": 1,
+        "session": 3,
+        "time": "",
+        "language": ""
+      }
+    ]
   }
 ]
