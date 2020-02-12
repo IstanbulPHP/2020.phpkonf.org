@@ -161,18 +161,16 @@
         <br/>
         <br/>
 
-        <div class="col-sm-4" v-for="item in getRandomSpeakers()">
+        <div class="col-sm-4" v-for="speaker in getRandomSpeakers()">
             <div class="speaker">
-                <div class="photo-wrapper rounded"><img width="200px" height="200px" :src="item.avatar"
-                                                        :alt="item.name" class="img-responsive"></div>
-                <h3 class="name">{{ item.name }}</h3>
+                <div class="photo-wrapper rounded"><img width="200px" height="200px" :src="speaker.photo"
+                                                        :alt="speaker.name" class="img-responsive"></div>
+                <h3 class="name">{{ speaker.name }}</h3>
                 <p class="text-alt">
-                    <small>{{ item.title }}</small>
+                    <small>{{ speaker.title }}</small>
                 </p>
                 <ul class="speaker-socials">
-                    <li><a target="_blank" :href="item.social.twitter"><span class="fa fa-twitter"></span></a></li>
-                    <li><a target="_blank" :href="item.social.github"><span class="fa fa-github"></span></a></li>
-                    <!-- <li><a target="_blank" :href="item.social.linkedin"><span class="fa fa-linkedin"></span></a> -->
+                    <li v-for="social in speaker.social_profiles"><a target="_blank" :href="'https://' + social.platform + '.com/' + social.username"><span :class="'fa fa-' + social.platform"></span></a></li>
                     </li>
                 </ul>
             </div>
@@ -197,7 +195,7 @@
 
             <!-- Navigation by day start -->
             <div class="nav-wrapper"><ul class="nav nav-schedule">
-                <li v-bind:class="{ active: day.isSelected }" v-for="day of days"><a v-bind:href="`#day${day.dayNumber}`" data-toggle="tab"><h5 class="highlight">{{ day.date }}</h5><p class="text-alt">Sessions</p></a></li>
+                <li v-bind:class="{ active: day.isSelected }" v-for="day of days"><a v-bind:href="`#day${day.id}`" data-toggle="tab"><h5 class="highlight">{{ day.date }}</h5><p class="text-alt">Sessions</p></a></li>
             </ul></div>
             <!-- Navigation by day end -->
 
@@ -205,45 +203,40 @@
             <div class="tab-content">
 
                 <!-- Day content start -->
-                <div v-bind:id="`day${day.dayNumber}`" v-bind:class="{ active: day.isSelected, 'tab-pane fade in': true }" v-for="day of days">
+                <div v-bind:id="`day${day.id}`" v-bind:class="{ active: day.isSelected, 'tab-pane fade in': true }" v-for="day of days">
 
                     <!-- Navigation by auditorium start -->
                     <div class="nav-wrapper"><ul class="nav nav-schedule">
                         <li v-bind:class="{ active: track.isSelected }" v-for="track of day.tracks">
-                            <a v-bind:href="`#day${day.dayNumber}_auditorium${track.trackNumber}`" data-toggle="tab">
-                                <div v-if="track.trackNumber == 1">
-                                    Track Sponsor 1
-                                </div>
-                                <div v-else>
-                                    Track Sponsor 2
-                                </div>
+                            <a v-bind:href="`#day${day.id}_auditorium${track.id}`" data-toggle="tab">
+                                <div>{{ track.name }}</div>
                             </a>
                         </li>
                     </ul></div>
                     <!-- Navigation by auditorium start -->
 
                     <!-- Second level content start -->
-                    <div v-if="false" class="tab-content tab-content-schedule">
+                    <div class="tab-content tab-content-schedule">
 
                         <!-- Auditorium content start -->
-                        <div v-bind:id="`day${day.dayNumber}_auditorium${track.trackNumber}`" v-bind:class="{ active: track.isSelected, 'tab-pane fade in': true }" v-for="track of day.tracks">
+                        <div v-bind:id="`day${day.id}_auditorium${track.id}`" v-bind:class="{ active: track.isSelected, 'tab-pane fade in': true }" v-for="track of day.tracks">
 
                             <!-- Accordion start -->
-                            <div class="panel-group" v-bind:id="`day${day.dayNumber}_auditorium${track.trackNumber}_timeline`">
+                            <div class="panel-group" v-bind:id="`day${day.id}_auditorium${track.id}_timeline`">
 
                                 <!-- Lecture start -->
-                                <div class="panel schedule-item" v-for="session of getSchedule(day.dayNumber, track.trackNumber)">
+                                <div class="panel schedule-item" v-for="session of track.sessions">
                                     <div class="lecture-icon-wrapper">
-                                        <img :src="session.avatar">
+                                        <img :src="session.speaker.photo">
                                     </div>
-                                    <a data-toggle="collapse" v-bind:data-parent="`#day${day.dayNumber}_auditorium${track.trackNumber}_timeline`" v-bind:href="`#day${day.dayNumber}_auditorium${track.trackNumber}_time_${session.sessionNumber}`" class="schedule-item-toggle collapsed">
-                                        <strong class="time highlight"><span class="icon icon-office-24"></span>{{ session.time }}, {{ session.language }}</strong>
+                                    <a data-toggle="collapse" v-bind:data-parent="`#day${day.id}_auditorium${track.id}_timeline`" v-bind:href="`#day${day.id}_auditorium${track.id}_time_${session.id}`" class="schedule-item-toggle collapsed">
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>{{ session.start_at }} - {{ session.end_at }}, {{ session.language }}</strong>
                                         <h6 class="title">{{ session.title }}<i class="icon icon-arrows-06"></i></h6>
                                     </a>
-                                    <div v-bind:id="`day${day.dayNumber}_auditorium${track.trackNumber}_time_${session.sessionNumber}`" class="panel-collapse collapse schedule-item-body">
+                                    <div v-bind:id="`day${day.id}_auditorium${track.id}_time_${session.id}`" class="panel-collapse collapse schedule-item-body">
                                         <article>
                                             <p class="description">{{ session.description }}</p>
-                                            <strong class="highlight speaker-name">{{ session.speaker }}</strong>
+                                            <strong class="highlight speaker-name">{{ session.speaker.name }}</strong>
                                         </article>
                                     </div>
                                 </div>
