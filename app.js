@@ -1,59 +1,45 @@
-var dataURL = 'data.json';
+const API_URL = 'https://cms.kommunity.com/api/events/phpkonf-2020?with[]=speakers&with[]=sessions&with[]=days&with[]=tracks&with[]=sponsorships&with[]=photos'
 
 var App = new Vue({
     el: '#app',
     data: {
-        days: [
-            {
-                dayNumber: 1,
-                date: '11th April, 2020',
-                isSelected: true,
-                tracks: [
-                    { trackNumber: 1, isSelected: true },
-                    { trackNumber: 2, isSelected: false },
-                ],
-            }
-        ],
+        days: [],
         speakers: [],
+        sessions: [],
     },
     mounted() {
-        axios.get(
-           dataURL
-        ).then(
-            response => {
-                this.speakers = response.data;
-            }
-        );
+        this.getData()
     },
     methods: {
-        getSchedule: function (day, track) {
-            const schedules = [];
-
-            const speakersWithSessions = this.speakers.filter(x => x.sessions.find(y => y.day === day && y.track === track) !== undefined);
-
-            for (const speakerWithSessions of speakersWithSessions) {
-                for (const session of speakerWithSessions.sessions) {
-                    if (session.day !== day || session.track !== track) {
-                        continue;
-                    }
-
-                    const schedule = {
-                        sessionNumber: session.session,
-                        time: session.time,
-                        language: session.language,
-                        title: session.title,
-                        description: session.description,
-                        speaker: speakerWithSessions.name,
-                        avatar: speakerWithSessions.avatar,
-                    };
-
-                    schedules.push(schedule);
+        getData: function () {
+            axios.get(API_URL).then(response => {
+                    const { days, speakers } = response.data.data;
+                    this.days = days
+                    this.days[0].isSelected = true;
+                    this.days[0].tracks[0].isSelected = true;
+                    this.speakers = speakers;
+                    
+                    this.getAllSessions();
+                    this.addSessionsForSpeakers();
                 }
-            }
-
-            schedules.sort((a, b) => a.sessionNumber - b.sessionNumber);
-
-            return schedules;
+            );
+        },
+        getAllSessions: function () {
+            this.days.forEach(day => {
+                this.sessions = [...day.sessions, ...this.sessions]
+            });
+        },
+        addSessionsForSpeakers: function () {
+            this.speakers.forEach(speaker => {
+                speaker.sessions = this.sessions.filter(session => {
+                    if (session.speaker.id === speaker.id) {
+                        return session;
+                    }
+                })
+            });
+        },
+        getSortedSpeakers: function () {
+            return _.sortBy(this.speakers, 'name')
         },
         getRandomSpeakers: function() {
             return _.sampleSize(this.speakers, 6);

@@ -63,24 +63,22 @@
         <p>A-Z ordered</p>
         <hr/>
 
-        <div class="media" v-for="item in speakers">
+        <div class="media" v-for="speaker in getSortedSpeakers()">
             <div class="media-left">
                 <a href="#">
-                    <img style="margin-right: 15px;" width="150px" height="150px" align="left" :alt="item.name" class="img img-circle" :src="item.avatar">
+                    <img style="margin-right: 15px;" width="150px" height="150px" align="left" :alt="speaker.name" class="img img-circle" :src="speaker.photo">
                 </a>
             </div>
             <div class="align-left media-body">
-                <p style="font-weight: bold">{{ item.name }} / {{ item.title }}</p>
-                <p>{{ item.bio }}</p>
+                <p style="font-weight: bold">{{ speaker.name }} / {{ speaker.title }}</p>
+                <p>{{ speaker.bio }}</p>
                 <ul class="speaker-socials list-inline pull-right">
-                    <li><a target="_blank" :href="item.social.twitter"><span class="fa fa-twitter"></span></a></li>
-                    <li><a target="_blank" :href="item.social.github"><span class="fa fa-github"></span></a></li>
-                    </li>
+                    <li v-for="social in speaker.social_profiles"><a target="_blank" :href="'https://' + social.platform + '.com/' + social.username"><span :class="'fa fa-' + social.platform"></span></a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>
             <div class="align-left media-body">
-                <ul v-for="session in item.sessions">
+                <ul v-for="session in speaker.sessions">
                     <li>
                         <p style="font-weight: bold">{{ session.title }} / Language: {{ session.language }}</p>
                         <p>{{ session.description }}</p>
@@ -152,6 +150,7 @@
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
 <script src="app.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3&libraries=places&key=AIzaSyCdwGRqSLKdTXSBL8r7xoHy5z05877Cuss"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
