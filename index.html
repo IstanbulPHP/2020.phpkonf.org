@@ -170,7 +170,18 @@
                     <small>{{ speaker.title }}</small>
                 </p>
                 <ul class="speaker-socials">
-                    <li v-for="social in speaker.social_profiles"><a target="_blank" :href="'https://' + social.platform + '.com/' + social.username"><span :class="'fa fa-' + social.platform"></span></a></li>
+                    <li v-for="social in speaker.social_profiles">
+                        <div v-if="social.platform == 'linkedin'">
+                            <a target="_blank" :href="'https://' + social.platform + '.com/in/' + social.username">
+                                <span :class="'fa fa-' + social.platform"></span>
+                            </a>
+                        </div>
+                        <div v-else>
+                            <a target="_blank" :href="'https://' + social.platform + '.com/' + social.username">
+                                <span :class="'fa fa-' + social.platform"></span>
+                            </a>
+                        </div>
+                    </li>
                     </li>
                 </ul>
             </div>
@@ -230,7 +241,7 @@
                                         <img :src="session.speaker.photo">
                                     </div>
                                     <a data-toggle="collapse" v-bind:data-parent="`#day${day.id}_auditorium${track.id}_timeline`" v-bind:href="`#day${day.id}_auditorium${track.id}_time_${session.id}`" class="schedule-item-toggle collapsed">
-                                        <strong class="time highlight"><span class="icon icon-office-24"></span>{{ session.start_at }} - {{ session.end_at }}, {{ session.language }}</strong>
+                                        <strong class="time highlight"><span class="icon icon-office-24"></span>{{ session.start_at }} - {{ session.end_at }}, {{ session.language == 0 ? 'English' : 'Türkçe'  }}</strong>
                                         <h6 class="title">{{ session.title }}<i class="icon icon-arrows-06"></i></h6>
                                     </a>
                                     <div v-bind:id="`day${day.id}_auditorium${track.id}_time_${session.id}`" class="panel-collapse collapse schedule-item-body">
