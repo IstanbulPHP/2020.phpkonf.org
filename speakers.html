@@ -80,7 +80,7 @@
             <div class="align-left media-body">
                 <ul v-for="session in speaker.sessions">
                     <li>
-                        <p style="font-weight: bold">{{ session.title }} / Language: {{ session.language }}</p>
+                        <p style="font-weight: bold">{{ session.title }} / Language: {{ session.language == 0 ? 'English' : 'Türkçe'  }}</p>
                         <p>{{ session.description }}</p>
                     </li>
                 </ul>
