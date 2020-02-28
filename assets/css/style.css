@@ -2058,6 +2058,19 @@ h5.heading-alt {
   letter-spacing: 0.5em;
   color: #262627;
 }
+#hero h5.heading-alt {
+  letter-spacing: 0.2em;
+  display: block;
+}
+#hero h5.heading-alt {
+  background-color: rgba(0,0,0,0.3);
+  color: rgba(255,255,255,0.9);
+  display: inline-block;
+  border-radius: 8px;
+  padding: 4px 12px 4px 16px;
+  margin-right: 15px;
+  /* font-size: 16px; */
+}
 h6.heading-alt {
   font-size: 15px;
   line-height: 1.5;
@@ -6170,10 +6183,10 @@ button[type="submit"] .loading {
   -moz-transition: background 0.2s ease, color 0.2s ease;
   -o-transition: background 0.2s ease, color 0.2s ease;
   transition: background 0.2s ease, color 0.2s ease;
-  width: 25px;
+  width: 18px;
 }
 .navbar-toggle .icon-bar + .icon-bar {
-  margin-top: 9px;
+  margin-top: 6px;
 }
 .navigation-list {
   text-align: left;
@@ -7054,6 +7067,18 @@ button[type="submit"] .loading {
 @media (max-width: 480px) {
   .extra-heading {
     font-size: 50px;
+  }
+  #hero h5.heading-alt {
+    font-size: 16px;
+  }
+  #hero .container {
+    padding-bottom: 45px;
+  }
+  .header.header-black .navigation-link {
+    font-size: 22px;
+  }
+  .header.header-black .navigation-link.active {
+    color: #333;
   }
   .line-heading {
     white-space: normal;
