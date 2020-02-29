@@ -6176,6 +6176,7 @@ button[type="submit"] .loading {
   clear: both;
 }
 .navigation-header .logo {
+  filter: brightness(0) invert(1);
   display: inline-block;
   padding: 3px 0;
   font-family: "PT Sans Caption", Arial, "Helvetica Neue", Helvetica, sans-serif;
