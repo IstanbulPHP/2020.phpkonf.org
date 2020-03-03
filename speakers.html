@@ -56,10 +56,10 @@
 </header>
 
 <div id="app">
-<section id="speakers" class="section align-center">
+<section id="speakers" class="section align-center" style="padding-top: 140px;">
     <div class="container">
 
-        <h3>Speakers / Sessions</h3>
+        <h3 class="main-title">Speakers / Sessions</h3>
         <p>A-Z ordered</p>
         <hr/>
 
@@ -73,7 +73,11 @@
                 <p style="font-weight: bold">{{ speaker.name }} / {{ speaker.title }}</p>
                 <p>{{ speaker.bio }}</p>
                 <ul class="speaker-socials list-inline pull-right">
-                    <li v-for="social in speaker.social_profiles"><a target="_blank" :href="'https://' + social.platform + '.com/' + social.username"><span :class="'fa fa-' + social.platform"></span></a></li>
+                    <li v-for="social in speaker.social_profiles">
+                        <a target="_blank" :href="'https://' + social.platform + '.com/' + social.username">
+                            <span :class="'fa fa-' + social.platform" style="color: #FFF; margin-right: 0;"></span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="clearfix"></div>
