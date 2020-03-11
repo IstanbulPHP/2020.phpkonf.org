@@ -5,7 +5,7 @@
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <title>[POSTPONED] - PHPKonf Istanbul PHP Conference</title>
+    <title>[POSTPONED] - PHPKonf İstanbul PHP Conference</title>
 
     <meta name="keywords"
           content="PHP, PHPKonf, PHP Conference, PHP Konferansı, İstanbul PHP Konferansı, Istanbul PHP Conference">
@@ -44,10 +44,13 @@
                 <div id="navigation" class="navbar-collapse collapse">
                     <ul class="navigation-list pull-right light-text">
                         <li class="navigation-item"><a href="speakers.html" class="navigation-link">Speakers</a></li>
-                        <li class="navigation-item"><a href="index.html#schedule" class="navigation-link">Schedule</a></li>
+                        <li class="navigation-item"><a href="index.html#schedule" class="navigation-link">Schedule</a>
+                        </li>
                         <li class="navigation-item"><a href="index.html#prices" class="navigation-link">Tickets</a></li>
-                        <li class="navigation-item"><a href="index.html#sponsors" class="navigation-link">Sponsors</a></li>
-                        <li class="navigation-item"><a href="index.html#contacts" class="navigation-link">Contacts</a></li>
+                        <li class="navigation-item"><a href="index.html#sponsors" class="navigation-link">Sponsors</a>
+                        </li>
+                        <li class="navigation-item"><a href="index.html#contacts" class="navigation-link">Contacts</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -56,45 +59,64 @@
 </header>
 
 <div id="app">
-<section id="speakers" class="section align-center" style="padding-top: 140px;">
-    <div class="container">
+    <section id="speakers" class="section align-center" style="padding-top: 140px;">
+        <div class="container">
 
-        <h3 class="main-title">Speakers / Sessions</h3>
-        <p>A-Z ordered</p>
-        <hr/>
+            <h3 class="main-title">Important PHPKonf 2020 Updates</h3>
+            <h6>We will continue to provide updates on this page as needed leading up to the event.</h6>
+            <hr>
+            <p><strong>UPDATE AS OF MARCH 11, 2020</strong></p>
+            <div style="text-align: left;">
+                <p>Over the past weeks, we have been closely monitoring global developments around the
+                    Coronavirus(COVID-19) outbreak. Unfortunately, today, Turkey's Health Minister confirmed the first
+                    case of coronavirus at the country.
+                <p>
 
-        <div class="media" v-for="speaker in getSortedSpeakers()">
-            <div class="media-left">
-                <a href="#">
-                    <img style="margin-right: 15px;" width="150px" height="150px" align="left" :alt="speaker.name" class="img img-circle" :src="speaker.photo">
-                </a>
-            </div>
-            <div class="align-left media-body">
-                <p style="font-weight: bold">{{ speaker.name }} / {{ speaker.title }}</p>
-                <p>{{ speaker.bio }}</p>
-                <ul class="speaker-socials list-inline pull-right">
-                    <li v-for="social in speaker.social_profiles">
-                        <a target="_blank" :href="'https://' + social.platform + '.com/' + social.username">
-                            <span :class="'fa fa-' + social.platform" style="color: #FFF; margin-right: 0;"></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="clearfix"></div>
-            <div class="align-left media-body">
-                <ul v-for="session in speaker.sessions">
-                    <li>
-                        <p style="font-weight: bold">{{ session.title }} / Language: {{ session.language == 0 ? 'English' : 'Türkçe'  }}</p>
-                        <p>{{ session.description }}</p>
-                    </li>
-                </ul>
-            </div>
+                <p>The security and safety of our attendees, speakers and sponsors will
+                    always be our top priority. After quick and careful consideration we have made the difficult
+                    decision to
+                    postpone PHPKonf 2020. We understand the inconvenience this may cause but we will do it properly
+                    when the time is right and everyone feels safe and comfortable.</p>
 
-            <hr/>
+                <p><strong><u>We are planning to host PHPKonf 2020 in the late summer</u></strong>. We hope you are able
+                    to
+                    join us and will provide an update with the new event dates as soon as possible. Please continue to
+                    follow our <a target="_blank" href="https://twitter.com/istanbulphp">Twitter</a> and <a
+                            target="_blank" href="https://kommunity.com/istanbulphp">Kommunity</a> pages as we announce
+                    more updates about conference.</p>
+
+                <p>We would like to thank all those involved in organising PHPKonf: our delegates, our speakers, our
+                    sponsors, as
+                    well as the team, for your continued participation and support.
+                    <strong><u>All purchased conference passes will remain valid for the event</u></strong>. We look
+                    forward to welcoming you in
+                    Istanbul. We will honor full refunds for those that need this. For more information, please, reach
+                    out to <a
+                            href="mailto:mail@istanbulphp.org"><strong>mail@istanbulphp.org</strong></a>.
+                </p>
+
+                <p>Our sympathies are with those affected during this difficult time.</p>
+
+                <p><strong>İstanbul PHP</strong></p>
+            </div>
+            <hr>
+            <p><strong>UPDATE AS OF MARCH 10, 2020</strong></p>
+            <div style="text-align: left;">
+                <p>
+                    <blockquote class="twitter-tweet">
+                <p lang="en" dir="ltr">[Important INFO] To all <a
+                        href="https://twitter.com/hashtag/PHPKonf?src=hash&amp;ref_src=twsrc%5Etfw">#PHPKonf</a>
+                    delegates, speakers and fellows: We are not planning to cancel PHPKonf 2020 conference scheduled for
+                    the 11th April in Istanbul, Turkey. We&#39;re following the situation closely. There&#39;s no
+                    COVID-19 case in Turkey so far. <a href="https://t.co/LWGaZT3Qn7">pic.twitter.com/LWGaZT3Qn7</a></p>&mdash;
+                istanbul PHP User Group (@istanbulphp) <a
+                    href="https://twitter.com/istanbulphp/status/1237264126889558016?ref_src=twsrc%5Etfw">March 10,
+                2020</a></blockquote>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </p>
+            </div>
         </div>
-
-    </div>
-</section>
+    </section>
 </div>
 
 <section class="footer">
@@ -133,11 +155,24 @@
 
     gtag('config', 'UA-63786228-1');
 
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+            n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window,
+        document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '293580531094723'); // Insert your pixel ID here.
     fbq('track', 'PageView');
 </script>
@@ -149,15 +184,20 @@
 
 <script type="text/javascript">
     _linkedin_data_partner_id = "258996";
-</script><script type="text/javascript">
-    (function(){var s = document.getElementsByTagName("script")[0];
+</script>
+<script type="text/javascript">
+    (function () {
+        var s = document.getElementsByTagName("script")[0];
         var b = document.createElement("script");
-        b.type = "text/javascript";b.async = true;
+        b.type = "text/javascript";
+        b.async = true;
         b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-        s.parentNode.insertBefore(b, s);})();
+        s.parentNode.insertBefore(b, s);
+    })();
 </script>
 <noscript>
-    <img height="1" width="1" style="display:none;" alt="" src="https://dc.ads.linkedin.com/collect/?pid=258996&fmt=gif" />
+    <img height="1" width="1" style="display:none;" alt=""
+         src="https://dc.ads.linkedin.com/collect/?pid=258996&fmt=gif"/>
 </noscript>
 
 <!--[if lt IE 9]>
