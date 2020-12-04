@@ -5722,6 +5722,12 @@ button[type="submit"] .loading {
 .sponsor.inline {
   vertical-align: middle;
 }
+.sponsors .row {
+  padding: 0px 30px;
+}
+.sponsors .row div {
+  padding: 30px 0px;
+}
 @media (max-width: 1199px) {
   .sponsor:not(.inline):not(.big) {
     margin: 8px;
